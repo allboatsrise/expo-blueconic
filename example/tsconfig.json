@@ -1,0 +1,10 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "expo-blueconic": ["../src/index"],
+      "expo-blueconic/*": ["../src/*"]
+    }
+  }
+}
