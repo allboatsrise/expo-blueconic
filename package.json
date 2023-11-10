@@ -1,5 +1,5 @@
 {
-  "name": "expo-blueconic",
+  "name": "@allboatsrise/expo-blueconic",
   "version": "0.1.0",
   "description": "Expo module for BlueConic SDK React Native",
   "main": "build/index.js",
