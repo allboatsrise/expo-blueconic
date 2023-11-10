@@ -31,13 +31,20 @@
   "homepage": "https://github.com/allboatsrise/expo-blueconic#readme",
   "dependencies": {},
   "devDependencies": {
+    "@blueconic/blueconic-react-native": "^2.0.0",
     "@types/react": "^18.0.25",
+    "expo": "^49.0.0",
     "expo-module-scripts": "^3.0.11",
     "expo-modules-core": "^1.5.11"
   },
   "peerDependencies": {
-    "expo": "*",
+    "expo": ">=49.0.0",
     "react": "*",
     "react-native": "*"
+  },
+  "peerDependenciesMeta": {
+    "expo": {
+      "optional": true
+    }
   }
 }
