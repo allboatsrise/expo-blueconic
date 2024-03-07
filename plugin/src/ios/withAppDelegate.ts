@@ -9,7 +9,7 @@ export const withAppDelegate: ConfigPlugin<BlueConicSdkPluginProps> = (config, {
   return withAppDelegateBase(config, async config => {
     config.modResults.contents = mergeContents({
       src: config.modResults.contents,
-      newSrc: `#import <BlueConicClient/BlueConic-swift.h>`,
+      newSrc: `#import <BlueConicClient/BlueConicClient-swift.h>`,
       anchor: /#import "AppDelegate\.h"/,
       offset: 1,
       tag: `${packageName}(header)`,
@@ -18,7 +18,7 @@ export const withAppDelegate: ConfigPlugin<BlueConicSdkPluginProps> = (config, {
 
     config.modResults.contents = mergeContents({
       src: config.modResults.contents,
-      newSrc: `BlueConic *blueConic = [BlueConic getInstance:self];`,
+      newSrc: `BlueConic *blueConic = [BlueConic getInstance:self.window.rootViewController];`,
       anchor: /return \[super application:application didFinishLaunchingWithOptions:launchOptions\];/,
       offset: 0,
       tag: `${packageName}(didFinishLaunchingWithOptions)`,
