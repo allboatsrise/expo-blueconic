@@ -18,7 +18,7 @@ export const withAppDelegate: ConfigPlugin<BlueConicSdkPluginProps> = (config, {
 
     config.modResults.contents = mergeContents({
       src: config.modResults.contents,
-      newSrc: `BlueConicClient *client = [BlueConicClient getInstance];`,
+      newSrc: `BlueConic *blueConic = [BlueConic getInstance:self.window.rootViewController];`,
       anchor: /return \[super application:application didFinishLaunchingWithOptions:launchOptions\];/,
       offset: 0,
       tag: `${packageName}(didFinishLaunchingWithOptions)`,
@@ -27,7 +27,7 @@ export const withAppDelegate: ConfigPlugin<BlueConicSdkPluginProps> = (config, {
 
     config.modResults.contents = mergeContents({
       src: config.modResults.contents,
-      newSrc: `[[BlueConicClient getInstance] setURL:url];`,
+      newSrc: `[[BlueConic getInstance:nil] setURL:url];`,
       anchor: /return \[super application:application openURL:url options:options\]/,
       offset: 0,
       tag: `${packageName}(openURL)`,

@@ -11,17 +11,16 @@ export const BlueConicSdkPluginOptionsSchema = z.object({
   debug: z.boolean({required_error: 'Must provide app id.'}).optional(),
 
   /**
-   * Url to Android SDK .aar to download
-   * source: https://mvnrepository.com/artifact/com.blueconic/blueconic-android-lib
-   * alternate source: https://central.sonatype.com/artifact/com.blueconic/blueconic-android-lib/versions
+   * BlueConic SDK version to use on Android.
+   * @see https://support.blueconic.com/hc/en-us/articles/20095976036251-BlueConic-SDK-for-Android-Release-Notes
    */
-  androidBlueConicSdkAarUrl: z.string().url().optional().default('https://repo1.maven.org/maven2/com/blueconic/blueconic-android-lib/4.0.0/blueconic-android-lib-4.0.0.aar'),
+  androidBlueConicSdkVersion: z.string().optional().default('5.1.0'),
 
   /**
    * Version of `BlueConicClient` Cocoa pod to use.
-   * source: https://github.com/search?q=repo%3ACocoaPods%2FSpecs+blueconicclient&type=commits&p=1
+   * @see https://support.blueconic.com/hc/en-us/articles/20151716578971-BlueConic-SDK-for-iOS-Release-Notes
    */
-  iosBlueConicClientPodVersion: z.string().optional().default('2.9.0'),
+  iosBlueConicClientPodVersion: z.string().optional().default('3.1.0'),
   
 }, {required_error: 'Must configure plugin options.'})
 
