@@ -59,6 +59,13 @@ export const setProfileValues = (name: string, values: string[]) => {
 }
 
 /**
+ * Update sync the BlueConic Profile
+ */
+export const updateProfile = () => {
+  BlueConicRN.updateProfile()
+}
+
+/**
  * Setter for the locale to get the parameters for. By default, the default locale configured in BlueConic is used.
  * Note: the only valid locales currently are `'en_US'` and `'nl_NL'`.
  * @param locale The locale, e.g.‘en_US’.
