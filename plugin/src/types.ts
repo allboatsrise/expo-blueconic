@@ -20,7 +20,7 @@ export const BlueConicSdkPluginOptionsSchema = z.object({
    * Version of `BlueConicClient` Cocoa pod to use.
    * @see https://support.blueconic.com/hc/en-us/articles/20151716578971-BlueConic-SDK-for-iOS-Release-Notes
    */
-  iosBlueConicClientPodVersion: z.string().optional().default('3.1.0'),
+  iosBlueConicClientPodVersion: z.string().optional().default('3.2.0'),
   
 }, {required_error: 'Must configure plugin options.'})
 

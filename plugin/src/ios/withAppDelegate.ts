@@ -9,7 +9,7 @@ export const withAppDelegate: ConfigPlugin<BlueConicSdkPluginProps> = (config, {
   return withAppDelegateBase(config, async config => {
     config.modResults.contents = mergeContents({
       src: config.modResults.contents,
-      newSrc: `#import <BlueConicClient/BlueConicClient-swift.h>`,
+      newSrc: `#import <WebKit/WebKit.h>\n#import <BlueConicClient/BlueConicClient-swift.h>`,
       anchor: /#import "AppDelegate\.h"/,
       offset: 1,
       tag: `${packageName}(header)`,
