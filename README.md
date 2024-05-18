@@ -25,7 +25,9 @@ Add package to `plugins` in `app.js`/`app.config.js`.
     [
       "@allboatsrise/expo-blueconic", {
         "serverUrl": "<< BLUECONIC_SERVER_URL >>",
-        "debug": false
+        "debug": false,
+        "androidBlueConicSdkVersion": "5.1.0", // optional
+        "iosBlueConicClientPodVersion": "3.2.0" // optional
       }
     ]
   ]
