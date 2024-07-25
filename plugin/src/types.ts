@@ -1,31 +1,22 @@
-import { z } from 'zod';
-
-export type BlueConicSdkPluginOptions = z.infer<typeof BlueConicSdkPluginOptionsSchema>
-
-export const BlueConicSdkPluginOptionsSchema = z.object({
+export type BlueConicSdkPluginProps = {
+  packageName: string,
+  packageVersion: string,
 
   /** BlueConic server url */
-  serverUrl: z.string({required_error: 'Must provide server url. For example "https://example.blueconic.net"'}).url({message: 'Invalid server url.'}),
+  serverUrl: string,
   
   /** Set to true in order to receive debug logs from the BlueConic SDK */
-  debug: z.boolean({required_error: 'Must provide app id.'}).optional(),
+  debug?: boolean,
 
   /**
-   * BlueConic SDK version to use on Android.
+   * BlueConic SDK version to use on Android. For example: '5.1.0'
    * @see https://support.blueconic.com/hc/en-us/articles/20095976036251-BlueConic-SDK-for-Android-Release-Notes
    */
-  androidBlueConicSdkVersion: z.string().optional().default('5.1.0'),
+  androidBlueConicSdkVersion?: string,
 
   /**
-   * Version of `BlueConicClient` Cocoa pod to use.
+   * Version of `BlueConicClient` Cocoa pod to use. For example: '3.2.0'
    * @see https://support.blueconic.com/hc/en-us/articles/20151716578971-BlueConic-SDK-for-iOS-Release-Notes
    */
-  iosBlueConicClientPodVersion: z.string().optional().default('3.2.0'),
-  
-}, {required_error: 'Must configure plugin options.'})
-
-
-export type BlueConicSdkPluginProps = BlueConicSdkPluginOptions & {
-  packageName: string
-  packageVersion: string
+  iosBlueConicClientPodVersion?: string,
 }
