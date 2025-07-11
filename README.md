@@ -7,11 +7,11 @@ Expo module for BlueConic SDK React Native
 To install the package use your prefered package manager:
 
 ```bash
-npm install @allboatsrise/expo-blueconic @blueconic/blueconic-react-native zod
+npm install @allboatsrise/expo-blueconic @blueconic/blueconic-react-native
 ```
 or
 ```bash
-yarn add @allboatsrise/expo-blueconic @blueconic/blueconic-react-native zod
+yarn add @allboatsrise/expo-blueconic @blueconic/blueconic-react-native
 ```
 
 ## Plugin setup
@@ -22,14 +22,7 @@ Add package to `plugins` in `app.js`/`app.config.js`.
 ```json
 "expo": {
   "plugins": [
-    [
-      "@allboatsrise/expo-blueconic", {
-        "serverUrl": "<< BLUECONIC_SERVER_URL >>",
-        "debug": false,
-        "androidBlueConicSdkVersion": "5.1.0", // optional
-        "iosBlueConicClientPodVersion": "3.2.0" // optional
-      }
-    ]
+    "@allboatsrise/expo-blueconic"
   ]
 }
 ```

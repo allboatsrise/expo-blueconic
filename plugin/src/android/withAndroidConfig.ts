@@ -1,11 +1,9 @@
 import { ConfigPlugin } from '@expo/config-plugins';
 import { BlueConicSdkPluginProps } from "../types";
-import { withConfigurationValues } from './withConfigurationValuesXml';
-import { withSdkDependency } from './withSdkDependency';
+import { withProguardRules } from './withProguardRules';
 
 export const withAndroidConfig: ConfigPlugin<BlueConicSdkPluginProps> =  (config, props) => {
-  config = withConfigurationValues(config, props)
-  config = withSdkDependency(config, props)
+  config = withProguardRules(config, props)
   
   return config;
 }
