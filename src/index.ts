@@ -1,5 +1,4 @@
 import { NativeModule, requireNativeModule } from 'expo';
-export * from '@blueconic/blueconic-react-native'
 import {BlueConicConfiguration, PropertiesDialogueEvent} from '@blueconic/blueconic-react-native'
 
 type BlueConicClientModuleEvents = {
@@ -7,7 +6,7 @@ type BlueConicClientModuleEvents = {
 }
 
 declare class BlueConicClientModule extends NativeModule<BlueConicClientModuleEvents> {
-  initialize: (configuration: BlueConicConfiguration, callback: ((success: true, error: null) => void) | ((success: false, error: string) => void)) => void
+  initialize: (configuration: BlueConicConfiguration, callback: (success: boolean, error: null | string) => void) => void
 
   /**
    * Returns the ID of the BlueConic Profile.
@@ -145,4 +144,5 @@ declare class BlueConicClientModule extends NativeModule<BlueConicClientModuleEv
 }
 
 // This call loads the native module object from the JSI.
-export default requireNativeModule<BlueConicClientModule>('BlueConicClient');
+export const BlueConicClient = requireNativeModule<BlueConicClientModule>('BlueConicClient');
+export {BlueConicConfiguration, EventName, PropertiesDialogueEvent} from '@blueconic/blueconic-react-native'

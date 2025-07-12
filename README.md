@@ -15,7 +15,6 @@ yarn add @allboatsrise/expo-blueconic @blueconic/blueconic-react-native
 ```
 
 ## Plugin setup
-#### [View parameters](#plugin-parameters)
 
 Add package to `plugins` in `app.js`/`app.config.js`.
 
@@ -25,4 +24,27 @@ Add package to `plugins` in `app.js`/`app.config.js`.
     "@allboatsrise/expo-blueconic"
   ]
 }
+```
+
+## Usage
+
+### Initialization
+
+```typescript
+import {BlueConicClient, BlueConicConfiguration} from '@allboatsrise/expo-blueconic'
+
+// initialization
+BlueConicClient.initialize(
+  new BlueConicConfiguration.Builder()
+    .setHostName(BLUECONIC_SERVER_URL) // your server url
+    .setDebug(false) // optional
+    .build(),
+  (_success, fail) => {
+    if (!fail) return
+    console.error(fail) // log error
+  }
+)
+
+// sample api call
+BlueConicClient.setProfileValue('property_name', 'property value')
 ```

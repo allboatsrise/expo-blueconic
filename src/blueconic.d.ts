@@ -8,15 +8,15 @@ declare module '@blueconic/blueconic-react-native' {
     build: () => BlueConicConfiguration
   }
 
-  class BlueConicConfiguration {
+  export class BlueConicConfiguration {
     static get Builder(): { new (): Builder };
   }
 
-  class EventName {
-      static PropertiesDialogue
+  export class EventName {
+    static PropertiesDialogue: string
   }
 
-  class PropertiesDialogueEvent {
+  export class PropertiesDialogueEvent {
     variantId: string
     position: string
     data: string
