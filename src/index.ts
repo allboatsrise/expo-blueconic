@@ -1,5 +1,5 @@
-import { NativeModule, requireNativeModule } from 'expo';
-import {BlueConicConfiguration, PropertiesDialogueEvent} from '@blueconic/blueconic-react-native'
+import { NativeModule } from 'expo';
+import {default as UntypedBlueConicClient, BlueConicConfiguration, PropertiesDialogueEvent} from '@blueconic/blueconic-react-native'
 
 type BlueConicClientModuleEvents = {
   propertiesDialogueEvent: (event: PropertiesDialogueEvent) => void
@@ -123,17 +123,17 @@ declare class BlueConicClientModule extends NativeModule<BlueConicClientModuleEv
    * for the screen.
    * @param screenName The screen name for this page view
    */
-  createPageViewEventAsync: (screenName: string, properties?: Record<string, unknown>) => void
+  createPageViewEventAsync: (screenName: string, properties: Record<string, unknown>) => Promise<void>
 
   /**
    * Calls the createEvent method of the BlueConicClient to register a VIEW event.
    */
-  createViewEvent: (interactionId: string, properties?: Record<string, unknown>) => void
+  createViewEventAsync: (interactionId: string, properties: Record<string, unknown>) => Promise<void>
 
   /**
    * Calls the createEvent method of the BlueConicClient to register a CONVERSION event.
    */
-  createConversionEvent: (interactionId: string, properties?: Record<string, unknown>) => void
+  createConversionEventAsync: (interactionId: string, properties: Record<string, unknown>) => Promise<void>
 
   /**
    * Static method that is called by the BlueConicInteraction when it receives the parameters of the dialogue,
@@ -144,5 +144,5 @@ declare class BlueConicClientModule extends NativeModule<BlueConicClientModuleEv
 }
 
 // This call loads the native module object from the JSI.
-export const BlueConicClient = requireNativeModule<BlueConicClientModule>('BlueConicClient');
+export const BlueConicClient = UntypedBlueConicClient as unknown as BlueConicClientModule
 export {BlueConicConfiguration, EventName, PropertiesDialogueEvent} from '@blueconic/blueconic-react-native'
