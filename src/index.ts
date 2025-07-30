@@ -107,6 +107,17 @@ declare class BlueConicClientModule extends NativeModule<BlueConicClientModuleEv
   setRefusedObjectives: (objectiveIds: string[]) => void
 
   /**
+   * Clears the profile ID from the BlueConic client locally (cache). A new profile ID will be generated.
+   */
+  createProfile: (callback: (success: boolean, error: null | string) => void) => void
+
+
+  /**
+   * Removes the profile from the BlueConic servers. The profile ID will be removed from the BlueConic client. A new profile ID will be generated.
+   */
+  deleteProfile: (callback: (success: boolean, error: null | string) => void) => void
+
+  /**
    * Update sync the BlueConic Profile
    */
   updateProfileAsync: () => Promise<[]>

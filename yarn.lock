@@ -1737,10 +1737,10 @@
     "@babel/helper-string-parser" "^7.27.1"
     "@babel/helper-validator-identifier" "^7.27.1"
 
-"@blueconic/blueconic-react-native@^4.0.0":
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/@blueconic/blueconic-react-native/-/blueconic-react-native-4.0.3.tgz#d58afef9b0778f34b8996eb3fccb766b23b8865b"
-  integrity sha512-8/h+oHsVbsxkpRh59May4MOzT0CDBCeQg4obmNrxn6jYJhcvcyR46UhE0hIgt/8Y7MR8VjkKhKjvTfTb3BiPZQ==
+"@blueconic/blueconic-react-native@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@blueconic/blueconic-react-native/-/blueconic-react-native-5.0.0.tgz#f7143ec03968b6c850a072acdd6bbb59c0e90ab2"
+  integrity sha512-p3ceD2kpUR7m+MLLBdTE2Fsnx53uQtONJQge5nFBwqCi0Uczhgt4AJCdBFBiEP6lFE16t452NAw3qgAlF2LlaQ==
 
 "@eslint-community/eslint-utils@^4.1.2", "@eslint-community/eslint-utils@^4.5.0", "@eslint-community/eslint-utils@^4.7.0":
   version "4.7.0"
@@ -7588,6 +7588,7 @@ string-length@^5.0.1:
     strip-ansi "^7.0.1"
 
 "string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.3:
+  name string-width-cjs
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -7692,6 +7693,7 @@ string.prototype.trimstart@^1.0.8:
     es-object-atoms "^1.0.0"
 
 "strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+  name strip-ansi-cjs
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
