@@ -5,8 +5,17 @@ type BlueConicClientModuleEvents = {
   propertiesDialogueEvent: (event: PropertiesDialogueEvent) => void
 }
 
+type InitializeErrorType =
+  | 'NotEnabled' 
+  | 'AlreadyEnabled'
+  | 'NoNetworkConnectionError' 
+  | 'InteractionRetrievalError' 
+  | 'InvalidParameters' 
+  | 'InternalError' 
+  | 'UnsupportedAndroidAPI'
+
 declare class BlueConicClientModule extends NativeModule<BlueConicClientModuleEvents> {
-  initialize: (configuration: BlueConicConfiguration, callback: (success: boolean, error: null | string) => void) => void
+  initialize: (configuration: BlueConicConfiguration, callback: (success: boolean, error: InitializeErrorType | string) => void) => void
 
   /**
    * Returns the ID of the BlueConic Profile.
